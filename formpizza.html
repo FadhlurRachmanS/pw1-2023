@@ -1,0 +1,92 @@
+<!DOCTYPE html >
+<html>
+<head>
+   <title>Black Mamba: Pizza-on-Pizzaku</title>
+   <style type="text/css">
+      ol, ul { 
+     list-style-type: none;
+      }
+   </style>
+</head>
+<body>
+<h1>Black Mamba | Pizza-on-Pizzaku</h1>
+<p>Our 12" wood-fired pizzas are avaiable for delivery. Build your custom pizza and we'll deliver it within an hour.</p>
+<form action="http://www.blackgoosebistro.com/pizza.php" method="post">
+<fieldset>
+  <fieldset>
+    <legend>Informasi Anda</legend>
+    <ul>
+    <li><label for="form-name">Name:</label> <input type="text" name="customername" id="form-name"></li>
+    <li><label for="form-address">Alamat:</label> <input type="text" name="address" id="form-address"></li>
+    <li><label for="form-tel">Nomor Telpon:</label> <input type="tel" name="telephone" id="form-tel"></li>
+    <li><label for="form-email">Email: <input type="email" name="email" id="form-email"></label></li>
+    <li>Catatan Driver:<br>
+    <textarea name="instructions" rows="4" cols="60" maxlength="400" id="form-story" placeholder=></textarea></li>
+    </ul>
+    </fieldset>
+    
+    <h2>Pilih Pizza Anda:</h2>
+    
+
+    <fieldset>
+    <legend>Spesipikasi Pizza
+    
+    </legend><fieldset>
+    <legend>Crust <em>(Pilih Satu)</em>:</legend>
+      <ul>
+      <li><label><input type="radio" name="crust" value="white">
+      Classic white 
+      </label></li>
+      <li><input type="radio" name="crust" value="multigrain"> 
+      Multigrain</li>
+      <li><input type="radio" name="crust" value="cheese crust">
+      Cheese-stuffed crust
+      </li>
+      <li><input type="radio" name="crust" value="gluten free">
+      Gluten-free
+      </li>
+      </ul>
+    </fieldset>
+    
+    <fieldset>
+    <legend>Toppings <em>(Pilih topping anda)</em></legend>
+      <ul>
+      <li><input type="checkbox" name="toppings[]" value="Chilie sauce" checked> 
+      Chilie sauce</li>
+      <li><input type="checkbox" name="toppings[]" value="Mustard sauce">
+      Mustard sauce
+      </li>
+      <li><input type="checkbox" name="toppings[]" value="mozzarella">
+        Mozzarella Cheese
+      </li>
+      <li><input type="checkbox" name="toppings[]" value="pepperoni"> 
+       Pepperoni</li>
+      <li><input type="checkbox" name="toppings[]" value="peppers">
+      Peppers
+      </li>
+      <li><input type="checkbox" name="toppings[]" value="anchovies"> 
+        Anchovies</li>
+       </ul>
+    </fieldset>
+    
+    <fieldset>
+    <legend>Nomer</legend>
+    <p>Banyak Pizza: 
+      <select name="pizzas" size="1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    </select>
+    </p>
+    </fieldset>
+    
+    </fieldset>
+    
+    <p><input type="submit" value=" pizzaku!">
+    <input type="reset"></p>
+    </form>
+    </body>
+    </html>
