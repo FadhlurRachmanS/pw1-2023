@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pembelian Tiket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url(img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: red;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<form id="ticketForm">
+    <label for="destination">Film :</label>
+    <select id="destination" name="destination">
+        <option value="gampang cuan">Gampang Cuan</option>
+        <option value="thunde boll">Thunder bool</option>
+        <option value="Pertaruhan">Pertaruhan</option>
+    </select>
+
+    <label for="departureTime">Jam Tayang:</label>
+    <input type="text" id="departureTime" name="departureTime" readonly>
+
+    <label for="quantity">Jumlah Tiket:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1">
+
+    <label for="total">Total Harga:</label>
+    <input type="text" id="total" name="total" readonly>
+
+    <label for="ticketNumber">Nomor Tiket:</label>
+    <input type="text" id="ticketNumber" name="ticketNumber" readonly>
+
+    <button type="button" onclick="calculateTotal()">Hitung Total</button>
+    <button type="submit">Beli Tiket</button>
+</form>
+
+<script>
+    function calculateTotal() {
+        var destination = document.getElementById('destination').value;
+        var quantity = document.getElementById('quantity').value;
+
+        var pricePerTicket = 0;
+        var departureTime = '';
+        switch (destination) {
+            case 'gampang cuan':
+                pricePerTicket = 50000;
+                departureTime = '08:00';
+                break;
+            case 'thunde boll':
+                pricePerTicket = 50000;
+                departureTime = '11:30';
+                break;
+            case 'Pertaruhan':
+                pricePerTicket = 50000;
+                departureTime = '13:45';
+                break;
+            default:
+                break;
+        }
+
+        var total = pricePerTicket * quantity;
+        var ticketNumber = generateTicketNumber();
+
+        document.getElementById('total').value = 'Rp ' + total.toLocaleString();
+        document.getElementById('departureTime').value = departureTime;
+        document.getElementById('ticketNumber').value = ticketNumber;
+    }
+
+    function generateTicketNumber() {
+        return Math.floor(Math.random() * 1000000) + 1;
+    }
+
+    document.getElementById('ticketForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        alert('Tiket berhasil dibeli!\nNomor Tiket: ' + document.getElementById('ticketNumber').value);
+    });
+</script>
+
+</body>
+</html>
